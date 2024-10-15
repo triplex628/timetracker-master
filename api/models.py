@@ -183,14 +183,6 @@ class TaskModel(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        # Проверяем, если вручную введен ID прибора
-        if self.manual_item_id is not None:
-            try:
-                # Пробуем найти прибор по вручную введенному ID
-                item = ItemModel.objects.get(pk=self.manual_item_id)
-                self.item = item  # Связываем найденный объект с полем item
-            except ItemModel.DoesNotExist:
-                raise ValueError(f"Прибор с ID {self.manual_item_id} не существует.")
         super().save(*args, **kwargs)
 
     class Meta:
