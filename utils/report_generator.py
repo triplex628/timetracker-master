@@ -275,7 +275,7 @@ class ReportGenerator:
                     sheet[f'{chr(ord("E") + col_index)}{row_index + 1}'] = '\n'.join(value.employees)
                     col_index += 1
                 if not flag:
-                    sheet[f'{chr(ord("E") + col_index)}{row_index}'] = total_time
+                    sheet[f'{chr(ord("E") + 4)}{row_index}'] = total_time
                     row_index += 2
 
     def generate_report(self, employee_tasks):
